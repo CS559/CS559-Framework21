@@ -18,7 +18,6 @@ jobs:
           source_dir: .
           output_dir: ./out
           config_file: jsdoc.config
-          template: ink-docstrap
           front_page: README.md
 
       - name: Deploy
