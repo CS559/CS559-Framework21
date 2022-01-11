@@ -1,5 +1,7 @@
 # CS559 3D Framework (a.k.a. "Graphics Town")
 
+**This is the Spring 22 Version of the Framework!**
+
 This directory contains framework code to be used for the assignments for the
 CS559 (Computer Graphics) class at the University of Wisconsin.
 
