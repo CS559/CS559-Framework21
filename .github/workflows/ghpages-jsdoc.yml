@@ -18,7 +18,7 @@ jobs:
           source_dir: .
           output_dir: ./out
           config_file: jsdoc.config
-          template: minami
+          template: ink-docstrap
           front_page: README.md
 
       - name: Deploy
@@ -26,7 +26,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./out
           allow_empty_commit: true
           enable_jekyll: false
           publish_branch: gh-pages
