@@ -29,7 +29,7 @@ import Stats from './Stats.js'
 
 alert("look at TODO in GrWorld");
 
-/** Things to do post 2021 
+/** Things to do post 2021  TODO
  * Better handling of rideable (let use controls)
  * Better documentation (make it so that GrObject parameters show up)
  * Convert to always use BufferGeometry (since Geometry is deprecated)
