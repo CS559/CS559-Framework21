@@ -110,6 +110,32 @@ export class GrSphere extends GrObject {
  * A simple object: a rectangle/square (flat) - useful for making signs
  */
 export class GrSquareSign extends GrObject {
+  /*
+  constructor(params = {}, paramInfo = []) {
+    const materialProps = {
+      side: T.DoubleSide,
+      color: params.color ?? 0xff8888,
+    } 
+    if (params.map) materialProps.map = params.map;
+    const material = params.material ?? new T.MeshStandardMaterial(materialProps)
+    const size = params.size ?? 0.5;
+    const geometry = new T.PlaneBufferGeometry(size, size);
+    
+
+    // note that we have to make the Object3D before we can call
+    // super and we have to call super before we can use this
+    const mesh = new T.Mesh(geometry, material);
+    super(`SquareSign-${simpleObjectCounter++}`, mesh, paramInfo);
+
+    // put the object in its place
+    mesh.position.x = Number(params.x) || 0;
+    mesh.position.y = Number(params.y) || 0;
+    mesh.position.z = Number(params.z) || 0;
+    
+    this.mesh = mesh;
+  }
+  */
+
   /**
    *
    * @param {Object} [params]
@@ -127,7 +153,7 @@ export class GrSquareSign extends GrObject {
     // make a square out of triangles
     const size = params.size ?? 0.5;
     const geometry = new T.BufferGeometry();
-
+    // set vertices
     const vertices = new Float32Array([
       -size, -size, 0,
       size, -size, 0,
@@ -139,7 +165,7 @@ export class GrSquareSign extends GrObject {
     ])
     geometry.setAttribute('position', new T.BufferAttribute(vertices, 3))
     geometry.computeVertexNormals();
-
+    // set uv grid
     const uvs = new Float32Array([
       0, 0,
       1, 0,
@@ -149,7 +175,7 @@ export class GrSquareSign extends GrObject {
       1, 1,
       0, 1
     ])
-    geometry.setAttribute('uv', new T.BufferAttribute(uvs, 3))
+    geometry.setAttribute('uv', new T.BufferAttribute(uvs, 2))
     // uv.needsUpdate = true;
 
     const materialProps = {
