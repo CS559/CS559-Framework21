@@ -27,7 +27,7 @@ import { FlyControls } from "../CS559-Three/examples/jsm/controls/FlyControls.js
 import { VRHelper } from './VRHelper.js'
 import Stats from './Stats.js'
 
-alert("look at TODO in GrWorld");
+// alert("look at TODO in GrWorld");
 
 /** Things to do post 2021  TODO
  * Better handling of rideable (let use controls)
