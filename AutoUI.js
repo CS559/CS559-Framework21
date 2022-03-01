@@ -47,8 +47,10 @@ export class AutoUI {
    * @param {GrObject} object
    * @param {number} [width=300]
    * @param {InputHelpers.WhereSpec} [where] - where to place the panel in the DOM (at the end of the page by default)
+   * @param {boolean} adjusted - whether adjust the slider length according to the label length
+   * @param {string} display - align type of the label and slider
    */
-  constructor(object, width = 300, where = undefined, widthdiv = 1) {
+  constructor(object, width = 300, where = undefined, widthdiv = 1, adjusted = false, display = "inline-block") {
     const self = this;
     this.object = object;
 
@@ -69,7 +71,9 @@ export class AutoUI {
         max: param.max,
         step: param.step ?? ((param.max - param.min) / 30),
         initial: param.initial,
-        id: object.name + "-" + param.name
+        id: object.name + "-" + param.name,
+        adjusted: adjusted,
+        display: display,
       });
       return slider;
     });
